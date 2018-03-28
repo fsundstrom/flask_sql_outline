@@ -1,0 +1,17 @@
+<html>
+   <head>
+     <title>
+      {% if title %}
+        {{title}}
+       {% else %}
+        Welcom to 
+        {% endif %}
+        Frank's DB access page</br>
+      </title>
+    </head> 
+
+    <body>
+       {% block content %}{% endblock %}
+    </body> 
+
+</html>

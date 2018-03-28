@@ -1,0 +1,11 @@
+{% extends "headder.html" %}
+{% block content %}
+    <hr>
+    <div><p>
+    <h1> {{x}} records loaded </h1>
+    {% for data in data %}
+    {{ data[0] }} , {{ data[1] }} ,{{ data[2] }} ,{{ data[3] }} </br>
+    {% endfor %}
+    </div></p>
+
+{% endblock %}

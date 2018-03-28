@@ -1,0 +1,28 @@
+{% extends "headder.html" %}
+{% block content %}
+
+{# --- page menu --- #}
+   <hr>
+   {% if data.has_prev %}<a href="{{ url_for('showdb', page=data.prev_num) }}">Priv Page</a>{% else %} Priv Page{% endif %} |
+    {% if data.has_next %}<a href="{{ url_for('showdb', page=data.next_num) }}">Next Page </a>{% else %}Next Page {% endif %}
+
+{# --- print table range --- #}
+
+    <div id="device">
+    Page {{data.page}} of {{data.pages}}
+    <TABLE BORDER="1" >
+    {% for val in ('ID','serial#','vendor','model','disc') %}
+       <TH ALIGN="CENTER" VALIGN="TOP">{{val}}</TH>
+    {% endfor %}
+    {% for data in data.items %}
+      <tr>
+       {% for val in (data.id,data.sn,data.vendor,data.device,data.disc) %}
+       <TH ALIGN="CENTER" VALIGN="TOP"  >
+       {{val}}</TH>
+       {% endfor %}
+       </TR>
+    {% endfor %}
+    </TR>
+    </div>
+
+{% endblock %}

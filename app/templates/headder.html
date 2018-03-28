@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta content="ADP GNS App Server" name="description" />
+    <meta content="Frank Sundstrom" name="author" />
+    <meta content="INDEX, FOLLOW" name="PnPadmin" />
+    <title>ADP GNS App Server : {{env['HOSTNAME']}}</title>
+    <meta content="text/html" name="dc.format" />
+    <link href="/static/style.css" type="text/css" rel="stylesheet" />
+    <style media="print" type="text/css">
+
+</style> </head>
+  <body class="dc-page">
+    <div id="page">
+      <div id="top" style="background-color: #000099;">
+        <h1 color="White" style="background-color: #000099;"><span>GNS App server : {{env['HOSTNAME']}}</span></h1>
+        <p>   <span style="font-family: Arial; font-weight: bold;">&nbsp&nbsp&nbsp{{title}}</span></p>
+      </div>
+      <div id="menu">
+        <ul>
+          <li id="home"><a href="{{ url_for('index') }}">Home</a></li>
+          <li id="search"><a href="{{ url_for('showdb') }}">Show Database</a></li>
+          <li id="mearge"><a href="importCSV">Add to Database</a></li>
+          <li id="env"><a href="{{ url_for('env') }}">Show ENV</a></li>
+          <li id=""><br />
+          </li>
+        </ul>
+      </div>
+      
+      <div id="wrapper">
+        <div id="main">
+          <div id="content"> {% block content %}{% endblock %} </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
